@@ -6,3 +6,15 @@ the planner will also store the saved data to the local storage.
 got today's date to populate using JS
 the basic shell seems to be in good shape right now.
 
+
+
+
+
+
+
+
+
+
+
+
+![First Photo](https://github.com/daviddugle/Work-Day-Scheduler/blob/main/assets/grid.jpg)
