@@ -29,28 +29,17 @@ for (var i=0;i<descripField.length;i++){
 };
 
 
-
+renderNine();
 //just need to set up local storage so that we can save and refresh the page without losing our data.
 
-
-// var inputField9 = localStorage.getItem("#input9");
-// var inputField10 = localStorage.getItem("input10");
-// var inputField11 = localStorage.getItem("input11");
-// var inputField12 = localStorage.getItem("input12");
-// var inputField13 = localStorage.getItem("input13");
-// var inputField14 = localStorage.getItem("input14");
-// var inputField15 = localStorage.getItem("input15");
-// var inputField16 = localStorage.getItem("input16");
-// var inputField17 = localStorage.getItem("input17");
-
-var entryForm9 = document.querySelector("#input9");
-
-
 $("#but9").on("click", function (event) {
-    event.preventDefault();
-    console.log(entryForm9.innerHTML);
-    console.log(JSON.stringify(entryForm9));
-    localStorage.setItem("input9", (entryForm9).innerHTML);
-    console.log(localStorage.getItem("input9"));
+    event.preventDefault();   
+    var entryForm9 = document.querySelector("#input9").value;   
+    localStorage.setItem("input9", entryForm9);
+    renderNine();    
 });
+function renderNine(){
+    var nineTalk = localStorage.getItem("input9");
+    document.querySelector("#input9").textContent= nineTalk;
 
+};
