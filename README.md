@@ -25,5 +25,5 @@ got the local storage working along with the color change
 
 
 
-
-![First Photo](https://github.com/daviddugle/Work-Day-Scheduler/blob/main/assets/grid.jpg)
+![First Photo](https://github.com/daviddugle/Work-Day-Scheduler/blob/main/assets/Screenshot%202020-11-11%20125954.jpg)
+![Second Photo](https://github.com/daviddugle/Work-Day-Scheduler/blob/main/assets/grid.jpg)
