@@ -1,23 +1,56 @@
-currentDayEl = document.querySelector("#currentDay");
+var bodyEl = document.querySelector("#input9");
 
 
 
 
+// set the current day on the page
+$("#currentDay").text(moment().format("dddd,MMMM,Do"));
+
+//let's set a variable for the current hour so that we can use that to color code the rows
+var currentHour = moment().format("H");
+console.log(currentHour)
+
+//now we are going to have to identify the current time of day and change the attibutes 
+var descripField = document.querySelectorAll("input.description");
+for (var i=0;i<descripField.length;i++){
+    dataHour = descripField[i].dataset.hour;
+    console.log(dataHour)
+
+    if (dataHour === currentHour){
+        $("descipField").addClass(".present");
+    };
+    // if else (dataHour > currentHour){
+    //     descipField.addClass(".future");
+    // };
+    // else if (dataHour<currentHour){
+    //     descipField.addClass(".past");
+    // };
+
+};
 
 
 
-
-// let's go ahead and put today's date on top of the planner
-var today = new Date();
-// var date = today.getDay()+","+(today.getMonth()+1)+","+today.getDate();
-var day =today.getDay();
-var month = today.getMonth()+1;
-var date = today.getDate();
-// I'm sure there was an easier way to do this
-var dayArr =["non","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"];
-var monthArr =["non","January","February","March","April","May","June","July","August","September","October","November","December"];
-var dateArr =["non","1st","2nd","3rd","4th","5th","6th","7th","8th","9th","10th","11th","12th","13th","14th","15th","16th","17th","18th","19th","20th","21st","22nd","23rd","24th","25th","26th","27th","28th","29th","30th","31st"];
+//just need to set up local storage so that we can save and refresh the page without losing our data.
 
 
+// var inputField9 = localStorage.getItem("#input9");
+// var inputField10 = localStorage.getItem("input10");
+// var inputField11 = localStorage.getItem("input11");
+// var inputField12 = localStorage.getItem("input12");
+// var inputField13 = localStorage.getItem("input13");
+// var inputField14 = localStorage.getItem("input14");
+// var inputField15 = localStorage.getItem("input15");
+// var inputField16 = localStorage.getItem("input16");
+// var inputField17 = localStorage.getItem("input17");
 
-currentDayEl.textContent = dayArr[day] + ", " + monthArr[month] + ", "+ dateArr[date];
+var entryForm9 = document.querySelector("#input9");
+
+
+$("#but9").on("click", function (event) {
+    event.preventDefault();
+    console.log(entryForm9.innerHTML);
+    console.log(JSON.stringify(entryForm9));
+    localStorage.setItem("input9", (entryForm9).innerHTML);
+    console.log(localStorage.getItem("input9"));
+});
+
